@@ -1,0 +1,63 @@
+# This is a basic workflow to help you get started with Actions
+
+name: CI-Front
+on:
+  push:
+    branches: [ FinalProject ]
+
+
+jobs:
+# Front job 
+  jobFront:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: Front
+        
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14.x'
+          
+      - name : Install dependencies
+        run: yarn install
+        
+      - name : Run test
+        run: yarn test
+        
+        
+# Back job 
+  jobBack:
+    runs-on: ubuntu-latest
+    services:
+      mysql:
+        image: mysql:5.7
+        ports:
+          - 3306:3306
+        env: |
+          MYSQL_ROOT_PASSWORD: root
+          MYSQL_PASSWORD: root
+          MYSQL_USERNAME: admin
+          MYSQL_DATABASE: lesson_test
+      
+    strategy:
+      matrix:
+        php-versions: ['8.0', '8.1']
+        
+    defaults:
+      run:
+        working-directory: Back
+        
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Docker & Symfony
+        uses: actions/setup-node@v2
+          
+      - name : Check PHP version
+        run: php -v
+        
+      - name : Run test
+        run: yarn test
+
