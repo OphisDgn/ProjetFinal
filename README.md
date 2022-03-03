@@ -1,4 +1,4 @@
-# Projet final 
+# Projet final du module Test Unitaires
 
 Réalisé par Céline L.
 
@@ -7,7 +7,7 @@ Réalisé par Céline L.
 
 
 ## Back
-### Fonctionnalité 
+### Fonctionnalités 
 
 
 - Afficher les produits
@@ -16,7 +16,7 @@ Réalisé par Céline L.
 - Afficher le panier
 
 ## Front
-### Fonctionnalité 
+### Fonctionnalités
 
 
 - Afficher les produits (image, nom, quantité)
