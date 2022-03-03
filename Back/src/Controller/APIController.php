@@ -46,9 +46,10 @@ class APIController extends AbstractController
     }
 
     #[Route('/cart/{id}', name: 'api_delete_product', methods: ["DELETE"])]
-    public function deleteProductToCart(Request $request, RickAndMortyGestion $rickAndMortyGestion, Product $product)
+    public function deleteProductToCart(Request $request, RickAndMortyGestion $rickAndMortyGestion, Product $product): Response
     {
         $cart = $rickAndMortyGestion->deleteProductToCart($product);
+        return $this->json($cart);
     }
 
     
