@@ -3,7 +3,7 @@
 Réalisé par Céline L.
 
 ## CI/CD des tests
-![Node CI](https://github.com/OphisDgn/ProjetFinal/workflows/Node%20CI/badge.svg)
+![Node CI](https://github.com/OphisDgn/ProjetFinal/workflows/CI-Front/badge.svg)
 
 
 
