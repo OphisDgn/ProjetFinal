@@ -22,6 +22,7 @@ function App() {
 
   return (
     <div className="App">
+      <h2>Liste de figurine</h2>
       {route.route === "home" && <Home setRoute={setRoute} />}
       {route.route === "product" && (
         <Product setRoute={setRoute} data={route.data} />

@@ -14,15 +14,16 @@ const Cart = ({ setRoute }: { setRoute: (data: any) => void }) => {
                 {products.map((product) => {
                 return (
                     <React.Fragment>
-                    <div>
-                        <img src={product.image} alt="" />
-                        <p>Figurine de {product.name}</p>
-                        <p>Quantité {product.quantity}</p>
-                    </div>
-                    <button onClick={() => removeToCart(product)}>
-                        Supprimer du panier
-                    </button>
-                    <hr />
+                        <div><h2>Panier</h2></div>
+                        <div>
+                            <img src={product.image} alt="" />
+                            <p>Figurine de {product.name}</p>
+                            <p>Quantité {product.quantity}</p>
+                        </div>
+                        <button onClick={() => removeToCart(product)}>
+                            Supprimer du panier
+                        </button>
+                        <hr />
                     </React.Fragment>
                 );
                 })}

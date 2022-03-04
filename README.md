@@ -3,7 +3,8 @@
 Réalisé par Céline L.
 
 ## CI/CD des tests
-> a venir prochainement
+![Node CI](https://github.com/OphisDgn/ProjetFinal/workflows/Node%20CI/badge.svg)
+
 
 
 ## Back

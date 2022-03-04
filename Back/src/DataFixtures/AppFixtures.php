@@ -10,7 +10,6 @@ use App\Service\RickAndMortyApiService;
 
 class AppFixtures extends Fixture
 {
-    
     private $prices = ["8", "9,99", "10", "15", "13,50"];
     private $quantities = [0,2,5,20,30,70];
     private RickAndMortyApiService $rickAndMortyApiService;

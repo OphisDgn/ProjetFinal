@@ -6,7 +6,6 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
-
 use App\Service\RickAndMortyGestion;
 use App\Entity\Product;
 use Exception;
@@ -38,7 +37,8 @@ class APIController extends AbstractController
         try {
             $data = json_decode($request->getContent(), true);
             $quantity = intval($data['quantity']);
-            $rickAndMortyGestion->addProductToCart($product, $quantity);
+            $cart = $rickAndMortyGestion->addProductToCart($product, $quantity);
+            return $this->json($cart);
         }
         catch (\Exception $e) {
             return $this->json(["error" => "Too many sorry"]);

@@ -11,6 +11,6 @@ class DefaultController extends AbstractController
     #[Route('/', name: 'homepage')]
     public function index(): Response
     {
-        return $this->json(['message' => "Hello"]);
+        return $this->json(['message' => "Hello everybody!"]);
     }
 }
