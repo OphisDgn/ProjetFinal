@@ -55,7 +55,7 @@ jobs:
       - name: Use Docker & Symfony
         uses: actions/setup-node@v2
           
-      - name : Docker build & up & open
+      - name : Docker build and up
         run: |
           docker-compose build
           docker-compose up -d
@@ -68,5 +68,3 @@ jobs:
           docker-compose exec -T app php bin/console doctrine:migrations:migrate -n --env=test
           docker-compose exec -T app php bin/console doctrine:fixtures:load -n --env=test
           docker-compose exec -T app php php bin/phpunit
-          
-      
