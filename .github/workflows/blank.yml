@@ -44,7 +44,7 @@ jobs:
       
     strategy:
       matrix:
-        php-versions: ['8.0', '8.1']
+        php-versions: ['8.1']
         
     defaults:
       run:
@@ -62,9 +62,9 @@ jobs:
         
       - name : Drop, create and migrate tables
         run: |
-          docker-compose exec app php bin/console doctrine:database:drop --force --env=test || true
-          docker-compose exec app php bin/console doctrine:database:create --env=test
-          docker-compose exec app php bin/console doctrine:migrations:migrate -n --env=test
-          docker-compose exec app php bin/console doctrine:fixtures:load -n --env=test
+          docker-compose exec -T app php bin/console doctrine:database:drop --force --env=test || true
+          docker-compose exec -T app php bin/console doctrine:database:create --env=test
+          docker-compose exec -T app php bin/console doctrine:migrations:migrate -n --env=test
+          docker-compose exec -T app php bin/console doctrine:fixtures:load -n --env=test
           
       
